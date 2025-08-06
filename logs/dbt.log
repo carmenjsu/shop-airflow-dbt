@@ -62,3 +62,43 @@ click.exceptions.Abort
 [0m07:07:39.357584 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019C566F4550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019C5895FEB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019C5895F700>]}
 [0m07:07:39.357584 [debug] [MainThread]: Flushing usage events
 [0m07:07:39.804840 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:24:00.898214 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027882E67730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002788412ED00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002788412EE20>]}
+
+
+============================== 14:24:00.903927 | e00986ef-844a-4fb3-b719-bd67f0e8a4c6 ==============================
+[0m14:24:00.903927 [info ] [MainThread]: Running with dbt=1.10.6
+[0m14:24:00.905918 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\jiawe\\.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt init shop', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:24:00.944634 [info ] [MainThread]: A project called shop already exists here.
+[0m14:24:00.946455 [debug] [MainThread]: Command `dbt init` succeeded at 14:24:00.946455 after 0.16 seconds
+[0m14:24:00.946455 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027882E67730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002788410CC40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002788410C7C0>]}
+[0m14:24:00.948002 [debug] [MainThread]: Flushing usage events
+[0m14:24:01.434828 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:24:25.810165 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C11A426820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C11C6BDC10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C11C6BDFD0>]}
+
+
+============================== 14:24:25.814105 | 83d3f516-50e9-469d-8c08-42f744283a3c ==============================
+[0m14:24:25.814105 [info ] [MainThread]: Running with dbt=1.10.6
+[0m14:24:25.815216 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\jiawe\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init shop', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:24:25.841159 [debug] [MainThread]: Starter project path: C:\Users\jiawe\OneDrive\Desktop\shop-airflow-dbt\.venv\lib\site-packages\dbt\include\starter_project
+[0m14:24:25.924559 [info ] [MainThread]: 
+Your new dbt project "shop" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:24:25.925560 [info ] [MainThread]: Setting up your profile.
+[0m14:26:08.202607 [info ] [MainThread]: Profile shop written to C:\Users\jiawe\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m14:26:08.204826 [debug] [MainThread]: Command `dbt init` succeeded at 14:26:08.203818 after 102.48 seconds
+[0m14:26:08.204826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C11A426820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C11C740130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C11C6BDF70>]}
+[0m14:26:08.205823 [debug] [MainThread]: Flushing usage events
+[0m14:26:08.666141 [debug] [MainThread]: An error was encountered while trying to flush usage events
