@@ -2,13 +2,49 @@ models:
   - name: stg_customers
     description: "Staging model for customers"
     columns:
+      - name: customer_id
+        description: "Unique identifier for each customer"
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values: "{{ range(1, 6) | list }}"
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id  
+  - name: stg_orders
+    description: "Staging model for orders"
+    columns:
       - name: order_id
+        description: "Unique identifier for each order"
         tests:
           - not_null
           - unique
       - name: customer_id
+        description: "Identifier for the customer who placed the order"
         tests:
           - not_null
           - relationships:
-              to: ref('dim_customers')
-              field: customer_id  
+              to: ref('stg_customers')
+              field: customer_id 
+      - name: order_date
+        description: "Timestamp when the order was placed" 
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "order_date < current_timestamp()"
+  - name: stg_shipments
+    description: "Staging model for shipments"
+    columns:
+      - name: shipment_id
+        description: "Unique identifier for each shipment"
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: "Identifier for the order being shipped"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
