@@ -1,15 +1,10 @@
 WITH customers AS (
     SELECT
         customer_id,
-        name,
-        email
+        customer_name,
+        customer_email
     FROM
         {{ ref('stg_customers') }}
 )
 
-SELECT 
-    customer_id,
-    name AS customer_name,
-    email AS customer_email
-FROM
-    customers
+SELECT * FROM customers
