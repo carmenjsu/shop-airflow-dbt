@@ -1,6 +1,6 @@
 customer_id,customer_name,customer_email
-1,Charlie,alice@example.com
-2,Charlie,bob@example.com
-3,Alice,charlie@example.com
+1,Alice,alice@example.com
+2,Bob,bob@example.com
+3,Charlie,charlie@example.com
 4,David,david@example.com
 5,Eve,eve@example.com
