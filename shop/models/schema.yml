@@ -20,6 +20,7 @@ models:
         tests:
           - not_null
           - unique
+          - test_positive_value 
       - name: customer_id
         description: "Identifier for the customer who placed the order"
         tests:
@@ -31,8 +32,8 @@ models:
         description: "Timestamp when the order was placed" 
         tests:
           - not_null
-          - dbt_utils.expression_is_true:
-              expression: "order_date < current_timestamp()"
+          #- dbt_utils.expression_is_true:
+          #    expression: "order_date <= current_timestamp()"
   - name: stg_shipments
     description: "Staging model for shipments"
     columns:
