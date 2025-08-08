@@ -20,7 +20,7 @@ models:
         tests:
           - not_null
           - unique
-          - test_positive_value 
+          - positive_value 
       - name: customer_id
         description: "Identifier for the customer who placed the order"
         tests:
@@ -49,3 +49,8 @@ models:
           - relationships:
               to: ref('stg_orders')
               field: order_id
+      - name: delivered_at
+        description: "Timestamp when the shipment was delivered"
+        tests:
+          - col_gte_compared:
+              compared_to: shipped_at

@@ -30,11 +30,14 @@ SELECT
     os.shipment_status,
     os.shipped_at,
     os.delivered_at,
-    DATE(os.delivered_at) - DATE(os.shipped_at) AS date_difference,
+    CASE
+        WHEN os.delivered_at IS NOT NULL THEN DATE(os.delivered_at) - DATE(os.shipped_at) 
+        WHEN os.delivered_at IS NULL THEN DATEDIFF(day, os.shipped_at, CURRENT_TIMESTAMP)
+    END AS date_difference,
     CASE 
-        WHEN delivered_at IS NULL AND DATEDIFF(day, shipped_at, CURRENT_TIMESTAMP) <= 2 THEN 'In Transit'                        
-        WHEN delivered_at IS NULL AND DATEDIFF(day, shipped_at, CURRENT_TIMESTAMP) > 2 THEN 'Delayed'
-        WHEN delivered_at IS NOT NULL AND DATEDIFF(day, shipped_at, delivered_at) > 2 THEN 'Delayed'
+        WHEN os.delivered_at IS NULL AND DATEDIFF(day, os.shipped_at, CURRENT_TIMESTAMP) <= 2 THEN 'In Transit'                        
+        WHEN os.delivered_at IS NULL AND DATEDIFF(day, os.shipped_at, CURRENT_TIMESTAMP) > 2 THEN 'Delayed'
+        WHEN os.delivered_at IS NOT NULL AND DATEDIFF(day, os.shipped_at, os.delivered_at) > 2 THEN 'Delayed'
         ELSE 'On Time'
     END AS delayed_status   
 FROM

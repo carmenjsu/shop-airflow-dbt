@@ -1,4 +1,4 @@
-{% test test_positive_value(model, column_name) %}
+{% test positive_value(model, column_name) %}
 SELECT * 
 FROM {{ model }}
 WHERE {{ column_name }} <= 0
