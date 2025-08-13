@@ -4,6 +4,6 @@ WITH orders AS (
         customer_id,
         order_date
     FROM
-        raw.RAW_ORDER
+        {{ source('raw', 'raw_order') }} 
 )
 SELECT * FROM orders

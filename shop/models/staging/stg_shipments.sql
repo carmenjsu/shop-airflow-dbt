@@ -6,7 +6,7 @@ WITH shipments AS (
         shipped_at,
         delivered_at
     FROM
-        raw.RAW_SHIPMENT
+        {{ source('raw', 'raw_shipment') }} 
 )
 
 SELECT * FROM shipments

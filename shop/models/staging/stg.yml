@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    database: shops
+    schema: raw
+    tables:
+      - name: raw_customer
+      - name: raw_order
+      - name: raw_shipment

@@ -4,7 +4,7 @@ WITH customers AS (
         name AS customer_name,
         email AS customer_email
     FROM
-        raw.RAW_CUSTOMER
+        {{ source('raw', 'raw_customer') }} 
 )
 
 SELECT * FROM customers
