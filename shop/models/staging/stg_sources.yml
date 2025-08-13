@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: raw
+    database: shops
+    schema: raw
+    tables:
+      - name: raw_customer
+        columns: 
+          - name: customer_id
+            tests:
+              - not_null
+              - unique
+      - name: raw_order
+        loaded_at_field: order_date
+        freshness: 
+          warn_after: {count: 2, period: day}
+          error_after: {count: 24, period: day}
+        columns: 
+          - name: order_id
+            tests:
+              - not_null
+              - unique        
+      - name: raw_shipment
+        loaded_at_field: shipped_at
+        freshness: 
+          warn_after: {count: 2, period: day}
+          error_after: {count: 24, period: day} 
