@@ -19,8 +19,9 @@ customers AS (
         customer_email
     FROM
         {{ ref('dim_customers') }}
-)
+), 
 
+order_delays AS (
 SELECT 
     os.order_id,
     os.customer_id,
@@ -44,3 +45,6 @@ FROM
     orders_shipments os
 LEFT JOIN
     customers c ON os.customer_id = c.customer_id
+)
+
+SELECT * FROM order_delays

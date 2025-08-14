@@ -16,8 +16,9 @@ shipments AS (
         delivered_at
     FROM
         {{ ref('stg_shipments') }}
-)
+),
 
+orders_shipments AS (
 SELECT 
     o.order_id,
     o.customer_id,
@@ -28,3 +29,6 @@ SELECT
     s.delivered_at          
 FROM orders o
 LEFT JOIN shipments s ON o.order_id = s.order_id
+)
+
+SELECT * FROM orders_shipments
