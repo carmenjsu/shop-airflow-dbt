@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+
 WITH orders AS (
     SELECT
         order_id,
@@ -32,3 +38,6 @@ LEFT JOIN shipments s ON o.order_id = s.order_id
 )
 
 SELECT * FROM orders_shipments
+{% if is_incremental() %}
+WHERE order_date >= (SELECT MAX(order_date) FROM {{ this }})
+{% endif %}
