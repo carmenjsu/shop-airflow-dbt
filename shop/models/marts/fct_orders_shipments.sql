@@ -1,6 +1,8 @@
 {{
     config(
-        materialized='incremental'
+        materialized='incremental',
+        unique_key='order_id',
+        incremental_strategy='merge'
     )
 }}
 
@@ -38,6 +40,7 @@ LEFT JOIN shipments s ON o.order_id = s.order_id
 )
 
 SELECT * FROM orders_shipments
+
 {% if is_incremental() %}
 WHERE order_date >= (SELECT MAX(order_date) FROM {{ this }})
 {% endif %}
