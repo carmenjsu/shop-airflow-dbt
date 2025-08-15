@@ -1,3 +1,4 @@
+-- filepath: c:\Users\jiawe\OneDrive\Desktop\shop-airflow-dbt\shop\models\staging\stg_sources.yml
 version: 2
 
 sources:
