@@ -9,7 +9,7 @@ sources:
       - name: raw_customer
         columns: 
           - name: customer_id
-            tests:
+            data_tests:
               - not_null
               - unique
       - name: raw_order
@@ -19,7 +19,7 @@ sources:
           error_after: {count: 24, period: day}
         columns: 
           - name: order_id
-            tests:
+            data_tests:
               - not_null
               - unique        
       - name: raw_shipment
